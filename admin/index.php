@@ -24,10 +24,7 @@
             <br />
             Categories
         </div>
-
         <div class="clearfix"></div>
-
-
     </div>
 </div>
 <!--  MAIN CONTENT SECTION  END -->
