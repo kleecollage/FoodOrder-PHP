@@ -17,6 +17,18 @@
             echo $_SESSION['update']; // Display session msg
             unset($_SESSION['update']); // Unset session msg
         }
+        if (isset($_SESSION['user-not-found'])) {
+            echo $_SESSION['user-not-found']; // Display session msg
+            unset($_SESSION['user-not-found']); // Unset session msg
+        }
+        if (isset($_SESSION['pwd-not-match'])) {
+            echo $_SESSION['pwd-not-match']; // Display session msg
+            unset($_SESSION['pwd-not-match']); // Unset session msg
+        }
+        if (isset($_SESSION['change-pwd'])) {
+            echo $_SESSION['change-pwd']; // Display session msg
+            unset($_SESSION['change-pwd']); // Unset session msg
+        }
         ?>
         <br /> <br />
         <!--    BUTTON TO ADD ADMIN    -->
@@ -51,7 +63,7 @@
                  <td><?php echo $full_name ?></td>
                  <td><?php echo $username ?></td>
                  <td>
-                     <a href="" class="btn-primary">Change Password</a>
+                     <a href="<?php echo SITE_URL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
                      <a href="<?php echo SITE_URL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                      <a href="<?php echo SITE_URL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Remove Admin</a>
                  </td>
