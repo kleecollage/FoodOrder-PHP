@@ -13,6 +13,10 @@
             echo $_SESSION['delete']; // Display session msg
             unset($_SESSION['delete']); // Unset session msg
         }
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update']; // Display session msg
+            unset($_SESSION['update']); // Unset session msg
+        }
         ?>
         <br /> <br />
         <!--    BUTTON TO ADD ADMIN    -->
@@ -47,7 +51,8 @@
                  <td><?php echo $full_name ?></td>
                  <td><?php echo $username ?></td>
                  <td>
-                     <a href="#" class="btn-secondary">Update Admin</a>
+                     <a href="" class="btn-primary">Change Password</a>
+                     <a href="<?php echo SITE_URL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                      <a href="<?php echo SITE_URL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Remove Admin</a>
                  </td>
              </tr>

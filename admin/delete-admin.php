@@ -25,4 +25,3 @@ if ($res == TRUE) {
     // Redirect to manage-admin page
     header('location:'.SITE_URL.'admin/manage-admin.php');
 }
-
