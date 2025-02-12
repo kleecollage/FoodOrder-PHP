@@ -9,6 +9,10 @@
             echo $_SESSION['add']; // Display session msg
             unset($_SESSION['add']); // Unset session msg
         }
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete']; // Display session msg
+            unset($_SESSION['delete']); // Unset session msg
+        }
         ?>
         <br /> <br />
         <!--    BUTTON TO ADD ADMIN    -->
@@ -44,7 +48,7 @@
                  <td><?php echo $username ?></td>
                  <td>
                      <a href="#" class="btn-secondary">Update Admin</a>
-                     <a href="#" class="btn-danger">Remove Admin</a>
+                     <a href="<?php echo SITE_URL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Remove Admin</a>
                  </td>
              </tr>
             <?php

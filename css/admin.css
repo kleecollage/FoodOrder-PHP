@@ -29,21 +29,19 @@
 .tbl-full{
     width: 100%;
 }
-
 .tbl-30{
     width: 30%;
 }
-
 table tr th{
     border-bottom: 1px solid black;
     padding: 1%;
     text-align: left;
 }
-
 table tr td{
     padding: 1%;
 }
 
+/* Buttons CSS */
 .btn-primary{
     background-color: #1e90ff;
     padding: 1%;
@@ -51,11 +49,9 @@ table tr td{
     text-decoration: none;
     font-weight: bold;
 }
-
 .btn-primary:hover{
     background-color: #3742fa;
 }
-
 .btn-secondary{
     background-color: #7bed9f;
     padding: 1%;
@@ -63,11 +59,9 @@ table tr td{
     text-decoration: none;
     font-weight: bold;
 }
-
 .btn-secondary:hover{
     background-color: #2ed573;
 }
-
 .btn-danger{
     background-color: #ff6b81;
     padding: 1%;
@@ -75,31 +69,34 @@ table tr td{
     text-decoration: none;
     font-weight: bold;
 }
-
 .btn-danger:hover{
     background-color: #ff4757;
+}
+
+.success{
+    color: #2ed573;
+}
+
+.error{
+    color: #ff4757;
 }
 
 /* Menu CSS */
 .menu{
     border: 1px solid grey;
 }
-
 .menu ul{
     list-style-type: none;
 }
-
 .menu ul li{
     display: inline;
     padding: 1%;
 }
-
 .menu ul li a{
     text-decoration: none;
     font-weight: bold;
     color: #ff6b81;
 }
-
 .menu ul li a:hover{
     color: #ff4757;
 }
@@ -109,7 +106,6 @@ table tr td{
     padding: 3% 0;
     background-color: #f1f2f6;
 }
-
 .col-4{
     width: 18%;
     background-color: white;
