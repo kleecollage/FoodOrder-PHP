@@ -119,3 +119,11 @@ table tr td{
     background-color: #ff4757;
     color: white;
 }
+
+/* Login CSS */
+.login{
+    border: 1px solid grey;
+    width: 20%;
+    margin: 5% auto;
+    padding: 2%;
+}

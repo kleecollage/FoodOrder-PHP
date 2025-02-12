@@ -1,7 +1,7 @@
 <?php
 // Include constants php file
 include ('../config/constants.php');
-
+include('login-check.php');
 // 1.  Get ID of admin to delete
 $id = $_GET['id'];
 
