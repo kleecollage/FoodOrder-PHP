@@ -68,20 +68,20 @@
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input type="radio" name="Featured" id="Featured">Yes
-                        <input type="radio" name="Featured" id="Featured">No
+                        <input type="radio" name="featured" value="Yes">Yes
+                        <input type="radio" name="featured"  value="No">No
                     </td>
                 </tr>
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input type="radio" name="Active" id="Active">Yes
-                        <input type="radio" name="Active" id="Active">No
+                        <input type="radio" name="active" value="Yes">Yes
+                        <input type="radio" name="active" value="No">No
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Add Fodd" name="submit" id="submit" class="btn-secondary" />
+                        <input type="submit" value="Add Food" name="submit" id="submit" class="btn-secondary" />
                     </td>
                 </tr>
             </table>
