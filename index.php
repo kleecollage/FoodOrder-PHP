@@ -17,17 +17,45 @@
 
         <?php
         // Create SQL Query to display categories from DB
-        $ql = $
+        $sql = "SELECT * FROM tbl_category WHERE active = 'Yes' AND featured = 'Yes' LIMIT 5";
+        $res = mysqli_query($conn, $sql); // execute query
+        $count = mysqli_num_rows($res); // check records
+        if ($count > 0)
+        {
+            // Data available
+            while ($row = mysqli_fetch_assoc($res))
+            {
+                $id = $row['id'];
+                $title = $row['title'];
+                $image_name = $row['image_name'];
         ?>
-
-        <a href="category-foods.php">
-        <div class="box-3 float-container">
-            <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
-
-            <h3 class="float-text text-white">Pizza</h3>
-        </div>
-        </a>
-
+                <a href="<?php echo SITE_URL; ?>category-foods/<?php echo $id; ?>">
+                    <div class="box-3 float-container">
+                        <?php
+                        // Check image
+                        if ($image_name == "")
+                        {
+                            echo "<div>Image Not Available</div>"; // No image
+                        }
+                        else {
+                            // Image Available
+                        ?>
+                            <img src="<?php echo SITE_URL; ?>images/category/<?php echo $image_name; ?>" alt="Food Category" class="img-responsive img-curve" />
+                        <?php
+                        }
+                        ?>
+                        <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                    </div>
+                </a>
+        <?php
+            }
+        }
+        else
+        {
+            // No data available
+            echo "<div class='error'>Categories not Added</div>";
+        }
+        ?>
         <div class="clearfix"></div>
     </div>
 </section>
