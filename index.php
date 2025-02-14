@@ -28,6 +28,8 @@
                 $id = $row['id'];
                 $title = $row['title'];
                 $image_name = $row['image_name'];
+                echo "image_name";
+
         ?>
                 <a href="<?php echo SITE_URL; ?>category-foods/<?php echo $id; ?>">
                     <div class="box-3 float-container">
@@ -40,7 +42,8 @@
                         else {
                             // Image Available
                         ?>
-                            <img src="<?php echo SITE_URL; ?>images/category/<?php echo $image_name; ?>" alt="Food Category" class="img-responsive img-curve" />
+                            <img src="<?php echo SITE_URL; ?>images/category/<?php echo $image_name; ?>"
+                                 alt="Food Category" class="img-responsive img-curve" />
                         <?php
                         }
                         ?>
