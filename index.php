@@ -15,27 +15,16 @@
     <div class="container">
         <h2 class="text-center">Explore Foods</h2>
 
+        <?php
+        // Create SQL Query to display categories from DB
+        $ql = $
+        ?>
+
         <a href="category-foods.php">
         <div class="box-3 float-container">
             <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
 
             <h3 class="float-text text-white">Pizza</h3>
-        </div>
-        </a>
-
-        <a href="#">
-        <div class="box-3 float-container">
-            <img src="images/burger.jpg" alt="Burger" class="img-responsive img-curve">
-
-            <h3 class="float-text text-white">Burger</h3>
-        </div>
-        </a>
-
-        <a href="#">
-        <div class="box-3 float-container">
-            <img src="images/momo.jpg" alt="Momo" class="img-responsive img-curve">
-
-            <h3 class="float-text text-white">Momo</h3>
         </div>
         </a>
 
