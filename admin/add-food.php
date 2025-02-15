@@ -91,10 +91,10 @@
         if(isset($_POST['submit'])){
             // echo 'Clicked';
             // 1. Get the data from form
-            $title = $_POST['title'];
-            $description = $_POST['description'];
-            $price = $_POST['price'];
-            $category = $_POST['category'];
+            $title = mysqli_real_escape_string($conn, $_POST['title']);
+            $description = mysqli_real_escape_string($conn, $_POST['description']);
+            $price = mysqli_real_escape_string($conn, $_POST['price']);
+            $category = mysqli_real_escape_string($conn, $_POST['category']);
             // Check whether the radio btn was clicked or not
             if (isset($_POST['featured'])) $featured = $_POST['featured'];
             else $featured = "No"; // Default value
@@ -134,6 +134,7 @@
             } else {
                 $image_name = ""; // Default value
             }
+
             // 3. Insert into Database
             // Create SQL Query to Add food in DB
             //!! Numerical values dont have single quotes !!//
@@ -154,6 +155,7 @@
                           '$active'); ";
             // Execute the query
             $res2 = mysqli_query($conn, $sql2);
+
             // 4. Redirect to manage-food.php
             // Check if data where inserted or not
             if ($res2 == TRUE) {

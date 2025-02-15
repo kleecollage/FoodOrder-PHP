@@ -53,23 +53,14 @@
         <?php
         // Check if submit btn was clicked
         if (isset($_POST['submit'])) {
-            // echo "Clicked";
             // 1. Get the value from Category form
-            $title = $_POST['title'];
+            $title = mysqli_real_escape_string($conn, $_POST['title']);
             // For Radio input, we need to check if is selected or not
-            if (isset($_POST['featured'])) {
-                // Get the value from form
-                $featured = $_POST['featured'];
-            }
-            else {
-                // Set default value
-                $featured = "No";
-            }
-            if (isset($_POST['active'])) {
-                $active = $_POST['active'];
-            } else {
-                $active = "No";
-            }
+            if (isset($_POST['featured'])) $featured = $_POST['featured']; // Get the value from form
+            else $featured = "No"; // Set default value
+
+            if (isset($_POST['active'])) $active = $_POST['active'];
+            else $active = "No";
             // Check selected image and set the value for image name
             if (isset($_FILES['image']['name'])) {
                 // Upload the image

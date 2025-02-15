@@ -6,7 +6,8 @@
         <br /> <br />
         <?php
         // Check ID set
-        if (isset($_GET['id'])) {
+        if (isset($_GET['id']))
+        {
             // OK. Get details
             $id = $_GET['id'];
             // Create SQL Query to get all details
@@ -15,22 +16,23 @@
             $res = mysqli_query($conn, $sql);
             // Count rows to check
             $count = mysqli_num_rows($res);
-            if($count == 1) {
+            if($count == 1)
+            {
                 // OK. Get all data
                 $row = mysqli_fetch_assoc($res);
                 $title = $row['title'];
                 $current_image = $row['image_name'];
                 $featured = $row['featured'];
                 $active = $row['active'];
-            } else {
+            }
+            else
+            {
                 // redirect
                 $_SESSION['no-category-found'] ="<div class='error'>Category Not Found</div>";
                 header('Location:'.SITE_URL.'admin/manage-category.php');
             }
-        } else {
-            // redirect
-            header('Location:'.SITE_URL.'admin/manage-category.php');
         }
+        else header('Location:'.SITE_URL.'admin/manage-category.php'); // redirect
         ?>
         <form action="" method="post" enctype="multipart/form-data">
             <table class="tbl-30">
@@ -87,17 +89,19 @@
         </form>
 
         <?php
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['submit']))
+        {
             // echo 'Clicked';
             // 1. Get values from form
             $id = $_POST['id'];
-            $title = $_POST['title'];
+            $title = mysqli_real_escape_string($conn, $_POST['title']);
             $current_image = $_POST['current_image'];
             $featured = $_POST['featured'];
             $active = $_POST['active'];
 
             // 2. Updating new image (if selected)
-            if (isset($_FILES['image']['name'])) {
+            if (isset($_FILES['image']['name']))
+            {
                 // Get image details
                 $image_name = $_FILES['image']['name'];
                 if ($image_name != "") {
@@ -112,7 +116,8 @@
                     $upload = move_uploaded_file($source_path, $destination_path);
                     // Check whether the image is uploaded or not
                     // If not, stop the process and redirect with error message
-                    if ($upload == FALSE) {
+                    if ($upload == FALSE)
+                    {
                         // Set message
                         $_SESSION['upload'] = "<div class='error'>Failed on upload image</div>";
                         // Redirect to add-category page
@@ -121,11 +126,13 @@
                         die();
                     }
                     // B. Remove Current Image (if available)
-                    if ($current_image != "") {
+                    if ($current_image != "")
+                    {
                         $remove_path = "../images/category/" . $current_image;
                         $remove = unlink($remove_path);
                         // Check if image was removed
-                        if ($remove == false) {
+                        if ($remove == false)
+                        {
                             // Failed to remove image
                             $_SESSION['failed-remove'] = "<div class='error'>Failed Removing The Image</div>";
                             header('Location:' . SITE_URL . 'admin/manage-category.php');
@@ -133,12 +140,11 @@
                             die();
                         }
                     }
-                } else {
-                    $image_name = $current_image;
                 }
-            } else {
-                $image_name = $current_image;
+                else $image_name = $current_image;
             }
+            else $image_name = $current_image;
+
             // 3. Update DB
             $sql2 = "UPDATE tbl_category SET
                         title = '$title',
@@ -152,11 +158,14 @@
 
             // 4. Redirect
             // Check if query executed
-            if ($res2 == TRUE) {
+            if ($res2 == TRUE)
+            {
                 // OK. Category updated
                 $_SESSION['update'] = "<div class='success'>Category Updated Successfully</div>";
                 header('Location:' . SITE_URL . 'admin/manage-category.php');
-            } else {
+            }
+            else
+            {
                 // Failed to update category
                 $_SESSION['update'] = "<div class='error'>Failed to Update Category</div>";
                 header('Location:' . SITE_URL . 'admin/manage-category.php');
