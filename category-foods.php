@@ -66,7 +66,7 @@ else
                         <p class="food-price"><?php echo $price; ?></p>
                         <p class="food-detail"><?php echo $description; ?></p>
                         <br />
-                        <a href="<?php echo SITE_URL; ?>order.php?id=<?php echo $id; ?>" class="btn btn-primary">Order Now!</a>
+                        <a href="<?php echo SITE_URL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now!</a>
                     </div>
                 </div>
         <?php
