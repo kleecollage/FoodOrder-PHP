@@ -34,15 +34,28 @@
             ?>
                     <div class="food-menu-box">
                         <div class="food-menu-img">
-                            <img src="<?php echo SITE_URL; ?>images/food/<?php echo $image_name; ?>"
-                                 alt="Food Image" class="img-responsive img-curve">
+                            <?php
+                            if ($image_name == "")
+                            {
+                                // Image Not Available
+                                echo "<div class='error'>Image Not Available</div>";
+                            }
+                            else
+                            {
+                                // Display Image
+                            ?>
+                                <img src="<?php echo SITE_URL; ?>images/food/<?php echo $image_name; ?>"
+                                     alt="Food Image" class="img-responsive img-curve">
+                            <?php
+                            }
+                            ?>
                         </div>
                         <div class="food-menu-desc">
                             <h4><?php echo $title; ?></h4>
                             <p class="food-price"><?php echo $price; ?></p>
                             <p class="food-detail"><?php echo $description; ?></p>
                             <br />
-                            <a href="<?php echo SITE_URL; ?>order.php/<?php echo $id; ?>" class="btn btn-primary">Order Now!</a>
+                            <a href="<?php echo SITE_URL; ?>order.php?id=<?php echo $id; ?>" class="btn btn-primary">Order Now!</a>
                         </div>
                     </div>
             <?php
