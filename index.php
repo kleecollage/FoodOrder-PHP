@@ -8,9 +8,17 @@
         </form>
     </div>
 </section>
+<br /> <br />
 <!-- Food Search Section Ends Here -->
-
-<!-- CAtegories Section Starts Here -->
+<?php
+if (isset($_SESSION['order']))
+{
+    echo $_SESSION['order'];
+    unset ($_SESSION['order']);
+}
+?>
+<br /> <br />
+<!-- Categories Section Starts Here -->
 <section class="categories">
     <div class="container">
         <h2 class="text-center">Explore Foods</h2>

@@ -52,6 +52,10 @@ a:hover{
     color: #ff4757;
 }
 
+.success{
+    color: #2ed573;
+}
+
 .btn{
     padding: 1%;
     border: none;
