@@ -42,8 +42,8 @@
 // Check whether the submit btn was clicked or not
 if (isset($_POST['submit'])) {
     // 1. Get data from login Form
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, md5($_POST['password']));
 
     // 2. SQL to check whether credentials are ok or not
     $sql = "SELECT * FROM tbl_admin where username = '$username' AND password = '$password'";
