@@ -16,7 +16,7 @@
                 $title = $row['title'];
                 $image_name = $row['image_name'];
         ?>
-                <a href="<?php echo SITE_URL; ?>category-foods.php/<?php echo $id; ?>" >
+                <a href="<?php echo SITE_URL; ?>category-foods.php?id=<?php echo $id; ?>" >
                     <div class="box-3 float-container">
                         <?php
                         if ($image_name == "")

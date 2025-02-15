@@ -29,7 +29,7 @@
                 $title = $row['title'];
                 $image_name = $row['image_name'];
         ?>
-                <a href="<?php echo SITE_URL; ?>category-foods/<?php echo $id; ?>">
+                <a href="<?php echo SITE_URL; ?>category-foods.php?id=<?php echo $id; ?>">
                     <div class="box-3 float-container">
                         <?php
                         // Check image
@@ -107,7 +107,7 @@
                         <p class="food-price"><?php echo $price ?></p>
                         <p class="food-detail"><?php echo $description ?></p>
                         <br />
-                        <a href="order.php/<?php echo $id ?>" class="btn btn-primary">Order Now!</a>
+                        <a href="order.php?id=<?php echo $id ?>" class="btn btn-primary">Order Now!</a>
                     </div>
                 </div>
         <?php
@@ -123,7 +123,7 @@
     </div>
 
     <p class="text-center">
-        <a href="#">See All Foods</a>
+        <a href="<?php echo SITE_URL; ?>foods.php">See All Foods</a>
     </p>
 </section>
 <!-- Food Menu Section Ends Here -->
